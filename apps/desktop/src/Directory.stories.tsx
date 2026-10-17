@@ -20,3 +20,13 @@ export const LongAndDuplicateNames: Story = {
     ],
   },
 };
+
+export const SharedRoles: Story = {
+  args: {
+    source: [
+      { id: "team-1", name: "Alex", role: "Engineer" },
+      { id: "team-2", name: "Alex", role: "Engineer" },
+      { id: "team-3", name: "Jamie", role: "Designer" },
+    ],
+  },
+};

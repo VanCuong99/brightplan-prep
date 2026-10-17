@@ -18,7 +18,8 @@
     "check": "npm run typecheck && npm test && npm run build",
     "mobile:export": "npm exec -w @brightplan/mobile -- expo export --platform web --output-dir dist-web",
     "prepare:e2e": "npm run build-storybook -w @brightplan/desktop && npm run mobile:export",
-    "format": "prettier --write apps shared e2e *.ts *.json"
+    "format": "prettier --write apps shared e2e *.ts *.json",
+    "test:evidence": "npm run prepare:e2e && playwright test e2e/role-filter.spec.ts"
   },
   "devDependencies": {
     "typescript": "~5.9.3",

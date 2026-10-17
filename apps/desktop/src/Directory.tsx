@@ -2,8 +2,12 @@ import { useId, useState } from "react";
 import { filterPeople, people, type Person } from "../../../shared/directory";
 export function Directory({ source = people }: { source?: readonly Person[] }) {
   const [query, setQuery] = useState("");
+  const [selectedRole, setSelectedRole] = useState("");
   const inputId = useId();
-  const visible = filterPeople(source, query);
+  const roles = [...new Set(source.map((person) => person.role))].sort();
+  const visible = filterPeople(source, query).filter(
+    (person) => !selectedRole || person.role === selectedRole,
+  );
   return (
     <section aria-labelledby={`${inputId}-heading`}>
       <div className="section-heading">
@@ -24,10 +28,28 @@ export function Directory({ source = people }: { source?: readonly Person[] }) {
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
+        <div className="role-field">
+          <label htmlFor={`${inputId}-role`}>Filter by role</label>
+          <select
+            id={`${inputId}-role`}
+            value={selectedRole}
+            onChange={(event) => setSelectedRole(event.target.value)}
+          >
+            <option value="">All roles</option>
+            {roles.map((role) => (
+              <option key={role} value={role}>
+                {role}
+              </option>
+            ))}
+          </select>
+        </div>
         <button className="secondary" onClick={() => setQuery("")}>
           Clear search
         </button>
       </div>
+      <p className="filter-hint">
+        Clear search resets the name and keeps the selected role.
+      </p>
       <p className="result-count" role="status">
         {visible.length} {visible.length === 1 ? "person" : "people"} found
       </p>
@@ -54,7 +76,7 @@ export function Directory({ source = people }: { source?: readonly Person[] }) {
           <h3>No people found</h3>
           <p>
             {source.length
-              ? "Try another name, or clear your search."
+              ? "Try another name or choose All roles."
               : "There are no people in this directory yet."}
           </p>
         </div>
