@@ -1,0 +1,26 @@
+
+> brightplan-interview-lab@0.1.0 test:android:native
+> python3 e2e/android-native.py
+
+PASS: initial native screen
+PASS: name filter with keyboard
+PASS: clear with keyboard open
+PASS: empty state
+PASS: dismiss keyboard and restore
+PASS: portrait list scrolling
+PASS: landscape layout
+PASS: font scale 1.3
+{
+  "platform": {
+    "sdk": "36",
+    "release": "16",
+    "abi": "arm64-v8a",
+    "model": "sdk_gphone64_arm64",
+    "screen": "Physical size: 1080x2400",
+    "density": "Physical density: 420"
+  },
+  "passed": 8,
+  "output": "native-test-results/android-native"
+}
+
+Observed command exit code: 0

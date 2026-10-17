@@ -1,0 +1,112 @@
+
+> brightplan-interview-lab@0.1.0 test:e2e
+> npm run prepare:e2e && playwright test
+
+
+> brightplan-interview-lab@0.1.0 prepare:e2e
+> npm run build-storybook -w @brightplan/desktop && npm run mobile:export
+
+
+> @brightplan/desktop@0.1.0 build-storybook
+> storybook build
+
+
+┌  Building storybook v10.6.2
+│
+◇  Cleaning outputDir: storybook-static
+│
+◇  Loading presets
+│
+◇  Building manager..
+│
+●  Building open services..
+│
+●  Building preview..
+│  Vite vite v8.3.4 building client environment for production...
+transforming...
+✓ 43 modules transformed.
+rendering chunks...
+computing gzip size...
+│  Vite storybook-static/iframe.html                              18.66
+│  kB │ gzip:   5.27 kB
+│  storybook-static/assets/iframe-CrzqHj-e.css                4.07 kB │
+│  gzip:   1.49 kB
+│  storybook-static/assets/iframe-DRmULngO.js                 0.04 kB │
+│  gzip:   0.06 kB
+│  storybook-static/assets/rolldown-runtime-sJBDdmOt.js       1.20 kB │
+│  gzip:   0.67 kB
+│  storybook-static/assets/preload-helper-2GovK0wV.js         1.64 kB │
+│  gzip:   0.87 kB
+│  storybook-static/assets/Directory.stories-CBn7V5Ww.js      4.05 kB │
+│  gzip:   1.63 kB
+│  storybook-static/vite-inject-mocker-entry.js              27.81 kB │
+│  gzip:   9.67 kB
+│  storybook-static/assets/react-18-Cmj-asn3.js             182.42 kB │
+│  gzip:  57.47 kB
+│  storybook-static/assets/iframe-Dc67U7p1.js             1,126.27 kB │
+│  gzip: 319.66 kB
+
+│
+▲  Vite [plugin builtin:vite-reporter]
+│  (!) Some chunks are larger than 500 kB after minification. Consider:
+│  - Using dynamic import() to code-split the application
+│  - Use build.rolldownOptions.output.codeSplitting to improve chunking:
+│  https://rolldown.rs/reference/OutputOptions.codeSplitting
+│  - Adjust chunk size limit for this warning via
+│  build.chunkSizeWarningLimit.
+│  Vite ✓ built in 977ms
+│
+◇  Output directory:
+│  <repo>/apps/desktop/storybook-static
+│
+└  Storybook build completed successfully
+
+
+> brightplan-interview-lab@0.1.0 mobile:export
+> npm exec -w @brightplan/mobile -- expo export --platform web --output-dir dist-web
+
+Expo Autolinking module resolution enabled
+Starting Metro Bundler
+
+Web apps/mobile/index.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+| (node:67800) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundled 675ms apps/mobile/index.ts (224 modules)
+
+› web bundles (1):
+_expo/static/js/web/index-7ab02f59061e832927a4873ddb38a8cb.js (431KB)
+
+› Files (2):
+index.html (1.2KB)
+metadata.json (49B)
+
+Exported: dist-web
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:07] "GET / HTTP/1.1" 200 -
+
+Running 5 tests using 2 workers
+
+(node:68157) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:68156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/directory.spec.ts:2:1 › desktop search, empty state and clear work in a real browser (2.5s)
+  ✓  2 e2e/role-filter.spec.ts:3:1 › role filter: AND matching, empty state, clear policy, All roles and narrow viewport (2.8s)
+  ✓  3 e2e/directory.spec.ts:27:1 › query lab exposes a local simulated error, retry and results (2.7s)
+  ✓  4 e2e/directory.spec.ts:38:1 › RN web checkpoint filters and clears; this is not native verification (1.7s)
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /iframe.html?id=directory-people--empty&viewMode=story HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /vite-inject-mocker-entry.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /assets/iframe-DRmULngO.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /assets/rolldown-runtime-sJBDdmOt.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /assets/iframe-CrzqHj-e.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /assets/preload-helper-2GovK0wV.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /assets/iframe-Dc67U7p1.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /index.json HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /assets/Directory.stories-CBn7V5Ww.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] code 404, message File not found
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /favicon.ico HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [17/Oct/2026 19:08:19] "GET /assets/react-18-Cmj-asn3.js HTTP/1.1" 200 -
+  ✓  5 e2e/directory.spec.ts:53:1 › Storybook empty state renders independently (801ms)
+
+  5 passed (14.5s)
+
+Observed command exit code: 0

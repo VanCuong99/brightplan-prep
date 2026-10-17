@@ -1,0 +1,67 @@
+
+> brightplan-interview-lab@0.1.0 check
+> npm run typecheck && npm test && npm run test:mobile && npm run build
+
+
+> brightplan-interview-lab@0.1.0 typecheck
+> tsc --noEmit -p tsconfig.json && npm run typecheck -w @brightplan/mobile
+
+
+> @brightplan/mobile@0.1.0 typecheck
+> tsc --noEmit
+
+
+> brightplan-interview-lab@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.12 <repo>
+
+
+ Test Files  3 passed (3)
+      Tests  8 passed (8)
+   Start at  19:07:56
+   Duration  2.70s (transform 286ms, setup 781ms, import 840ms, tests 2.06s, environment 2.35s)
+
+
+> brightplan-interview-lab@0.1.0 test:mobile
+> npm run test -w @brightplan/mobile
+
+
+> @brightplan/mobile@0.1.0 test
+> jest --runInBand
+
+PASS ./App.test.tsx
+  React Native directory component behavior (mocked native environment)
+    ✓ renders the five fictional people with accessible search and clear controls (1142 ms)
+    ✓ matches a normalized name and excludes other people (61 ms)
+    ✓ shows a no-match empty state and restores all people when cleared (63 ms)
+    ✓ searches names rather than accidentally searching roles (20 ms)
+    ✓ treats whitespace as no name restriction (30 ms)
+    ✓ updates subsequent queries without keeping stale results (18 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        3.138 s
+Ran all test suites.
+
+> brightplan-interview-lab@0.1.0 build
+> npm run build -w @brightplan/desktop
+
+
+> @brightplan/desktop@0.1.0 build
+> vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 64 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.41 kB │ gzip:  0.28 kB
+dist/assets/index-CrzqHj-e.css    4.07 kB │ gzip:  1.49 kB
+dist/assets/index-CPh-iA_q.js   228.22 kB │ gzip: 71.08 kB
+
+✓ built in 311ms
+
+Observed command exit code: 0

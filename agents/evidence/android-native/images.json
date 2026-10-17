@@ -1,0 +1,56 @@
+{
+  "before-landscape.png": {
+    "sha256": "c8180f08e7de3e840e953244903d9aaba267b12afbef7891b7b36dddf82fd347",
+    "width": 2400,
+    "height": 1080,
+    "source_commit": "568ec15d61d895047e6a764da57018c5aae8b935"
+  },
+  "cleared-keyboard.png": {
+    "sha256": "351f3f556159f1762f5dfac08f5d96dd4d73b2c8a9b5dde0e3d9900bb7ae2523",
+    "width": 1080,
+    "height": 2400,
+    "source_commit": "a4f91b8d7cd503ee10258e812549fb208eba5785"
+  },
+  "empty-keyboard.png": {
+    "sha256": "1ce599791b287eefa750e05d6c9d6ce38bfe6e686a40cfad432d97b608a466eb",
+    "width": 1080,
+    "height": 2400,
+    "source_commit": "a4f91b8d7cd503ee10258e812549fb208eba5785"
+  },
+  "filtered-keyboard.png": {
+    "sha256": "221968da4b7e4c804276439d835d0d55a7d6f1e56ec1b1fb6c6ac40062b7119a",
+    "width": 1080,
+    "height": 2400,
+    "source_commit": "a4f91b8d7cd503ee10258e812549fb208eba5785"
+  },
+  "initial.png": {
+    "sha256": "b960448a8343c6f13272504f9179538f48aa9b5297ba41291598c3de24f46238",
+    "width": 1080,
+    "height": 2400,
+    "source_commit": "a4f91b8d7cd503ee10258e812549fb208eba5785"
+  },
+  "landscape.png": {
+    "sha256": "ffd7852b884483666dd23c7184235b5d96c7994577dcc17fe124dc84c35702d6",
+    "width": 2400,
+    "height": 1080,
+    "source_commit": "a4f91b8d7cd503ee10258e812549fb208eba5785"
+  },
+  "large-font.png": {
+    "sha256": "ca3e6a5cc500fde48d71237bb8c8cfa777e15e36c2df7d6c44e4776ae924e3a3",
+    "width": 1080,
+    "height": 2400,
+    "source_commit": "a4f91b8d7cd503ee10258e812549fb208eba5785"
+  },
+  "restored.png": {
+    "sha256": "94128c955debbc1c9542f5135504b70e2ce808c0136dc0002838ae7f9de15d05",
+    "width": 1080,
+    "height": 2400,
+    "source_commit": "a4f91b8d7cd503ee10258e812549fb208eba5785"
+  },
+  "scrolled-last-person.png": {
+    "sha256": "e41c85a60201620e1f9a9caf2b680e1e7974cc4400ab95149e67c48e89598355",
+    "width": 1080,
+    "height": 2400,
+    "source_commit": "a4f91b8d7cd503ee10258e812549fb208eba5785"
+  }
+}
