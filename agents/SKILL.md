@@ -38,4 +38,10 @@ Delegate only if the user/task/tool instructions authorize workers and the tool 
 
 Output the scoped change, review/QC result, evidence location, commit/branch and PR if shipped. Stop the affected operation on missing required authorization, denied permissions, uncertain mutation outcome, unresolved correctness findings or required checks that cannot run. Continue independent work. On uncertainty, inspect state before any retry; no duplicate push/PR creation. Reuse passing evidence when the source/checks are unchanged; fix findings once, rerun only affected checks, and escalate persistent blockers rather than looping.
 
-[Role-filter walkthrough](examples/role-filter.md) is a **template, not executed**. [Evidence template](templates/evidence.md) and [PR template](templates/pr.md) start unfilled. Actual scoped validation is recorded separately in [validation evidence](evidence/validation.md).
+[Executed role-filter workflow](runs/role-filter.md) records the real task, ownership, verification and review, with its current status made explicit. [Evidence template](templates/evidence.md) and [PR template](templates/pr.md) start unfilled. Actual scoped validation is recorded separately in [validation evidence](evidence/validation.md).
+
+## Ready-to-use invocation
+
+> Read AGENTS.md and agents/SKILL.md. Continue the current authorized task on its existing branch/PR. Explore the current code, produce a short acceptance/ownership plan, implement, obtain independent review, run relevant QC, and update evidence. For UI changes capture actual browser screenshots, publish only reviewed safe images, and embed immutable image URLs into the existing PR. Verify images render in the PR before reporting completion. Stop at the reviewable PR; do not merge.
+
+The skills are operational instructions, not an automatic runner. Their commands are run by the agent with the available tools. [The actual run](runs/role-filter.md) distinguishes sequential Lead/Dev/QC work from the independent Reviewer; it does not invent a team that did not run.

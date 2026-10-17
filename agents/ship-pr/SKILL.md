@@ -20,3 +20,17 @@ description: Publish a reviewed and validated task branch to the authorized GitH
 **Copy prompt:**
 
 > Use agents/ship-pr/SKILL.md. Publish [reviewed change] to [authorized repo] on [task branch] and create/update a PR into main after review/QC. Allowlist [paths], inspect the full outgoing history, keep private local docs untouched, verify the remote SHA and PR, and do not merge or force push.
+
+## Required visual evidence in a UI PR
+
+Before push, review the allowlisted image files and evidence record as public content. Commit safe UI evidence in the task branch or use an authorized repository attachment mechanism. Screenshots explicitly requested as evidence are the exception to excluding generated artifacts; build outputs, raw private logs and unrelated screenshots remain excluded.
+
+For repository-hosted images, use an immutable link after push:
+
+`https://raw.githubusercontent.com/OWNER/REPO/EVIDENCE_COMMIT/agents/evidence/TASK/IMAGE.png`
+
+Fill OWNER/REPO from the verified authorized repository and EVIDENCE_COMMIT from the pushed SHA. Embed it as `![State — expected and observed behavior](image-url)` directly in the PR body; include source commit, inputs and results in the caption. Do not use local filesystem paths or merely claim the files are attached.
+
+Update the existing PR by verified number using a body file (`gh pr edit ... --body-file ...`), rather than creating another PR. Then read the PR body back with `gh pr view`, confirm the expected image URLs are present, fetch every image and verify HTTP success, image MIME/signature and readable dimensions. Inspect the rendered PR/Markdown and open the resulting image to confirm it displays. If the GitHub client cannot show the full PR page, render the read-back body through GitHub's Markdown API and inspect that output in a browser, documenting this verification limit. Do not claim successful attachments from a local screenshot alone. Missing/broken/mismatched images block completion of a UI PR until fixed or an explicit, task-specific exception is approved.
+
+Return the same PR URL with the pushed code/evidence SHAs, test results, images and gaps. Neither updating the PR nor passing tests authorizes merging it.

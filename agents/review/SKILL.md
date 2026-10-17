@@ -19,3 +19,7 @@ description: Independently review a frozen task diff for correctness, scope, tes
 **Copy prompt:**
 
 > Use agents/review/SKILL.md. Independently review this frozen diff: [base/head or paths] for [request and criteria]. Do not edit or ship. Report reproducible findings and coverage limits. Check that public workflow claims cannot turn pending checks into PASS or bypass platform permissions.
+
+## UI evidence review
+
+For UI changes, inspect the actual screenshots and captions against the running/tested state. Confirm images show the claimed control/inputs/result, not generated mockups or terminal logs. Check source snapshot and capture provenance. A screenshot supports visible state, not unseen behavior, native-platform correctness or accessibility certification. Return evidence problems as findings alongside code problems. Recheck only changed code/evidence after fixes; do not approve the author's own review as independent.

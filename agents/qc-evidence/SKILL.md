@@ -20,3 +20,16 @@ description: Run relevant repository checks and capture reproducible, redacted e
 **Copy prompt:**
 
 > Use agents/qc-evidence/SKILL.md on [snapshot]. Run only checks needed for [criteria], capture real exit codes and expected/observed behavior, and fill an evidence record. Separate implementation validation, user readiness, RN web and native-device coverage. Never prefill PASS.
+
+## UI capture and safe publication
+
+For this directory, `npm run test:evidence` builds the prerequisites and runs `e2e/role-filter.spec.ts`; real Chrome screenshots are written to `test-results/role-filter/` after assertions. `npm run test:e2e` runs all browser journeys and includes these screenshots. Do not fabricate screenshots or use a terminal-log image as UI evidence.
+
+1. Record the source commit (or base plus a source fingerprint while uncommitted). Capture baseline before changing the UI when useful; label its own source separately.
+2. Assert expected visible behavior, then capture success, empty/edge and narrow states. Record viewport, browser, reproduction inputs, expected and observed result for each image.
+3. Open every image and inspect it for correctness, legibility and private content. Do not screenshot private windows, credentials, notifications or real people/data. Recapture a safe view if necessary.
+4. After user-authorized publication, copy only reviewed images to an explicit public path such as `agents/evidence/role-filter/`. Keep other `test-results/` artifacts ignored. Record image hashes and paths. Capture files must exist; never synthesize PASS or links.
+5. After the source commit exists, verify the tested/captured files still match it. A later evidence-only commit may reference the earlier source commit when code is unchanged. Include actual command exit codes and safe logs.
+6. Hand off the images and captions to the shipping skill. Until GitHub URLs are fetched and their rendering in the PR is checked, remote image verification is pending.
+
+Native device testing remains a separate check with its actual environment. RN web images are explicitly labeled web checkpoints; they cannot satisfy native evidence.

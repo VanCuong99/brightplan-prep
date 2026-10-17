@@ -19,3 +19,9 @@ description: Explore this repo and turn a requested change into acceptance crite
 **Copy prompt:**
 
 > Use agents/analyze-plan/SKILL.md. Analyze [change] against the current code. Give acceptance criteria, ambiguous behavior, touched files with one owner each, and the smallest meaningful checks. Keep local interview documents out of publication. Do not implement optional features.
+
+## Concrete repo inspection
+
+Run `git status --short`, `git branch --show-current`, `git log -1 --oneline` and inspect `package.json`. Use `rg --files apps shared e2e agents` while excluding generated output and dependencies. Read the relevant component, its tests and callers. Write acceptance criteria and an explicit touched-file list before edits; record a decision such as clear/reset behavior in the task record. Continue the existing task branch/PR when one already handles the request instead of creating a duplicate.
+
+For UI work, plan screenshots before implementation: baseline, successful interaction, meaningful edge/empty state, and a narrow viewport if responsive layout changes. Agree which safe artifact paths may be published. Output the planned reproduction steps and expected result for every screenshot, not just a list of image names.

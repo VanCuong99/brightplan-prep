@@ -21,3 +21,11 @@ Status: **NOT RUN**. Fill only from actual observation; do not copy a PASS from 
 - User readiness / ability to explain or independently change the code: not assessed.
 - Final commit / evidence applicability after commit:
 - PR URL / verification: not created.
+
+## UI screenshot evidence — NOT RUN
+
+| State / input | Expected      | Observed     | Browser / viewport / source commit | Image URL / SHA256 | Fetch/render check |
+| ------------- | ------------- | ------------ | ---------------------------------- | ------------------ | ------------------ |
+| Not captured  | Not specified | Not observed | Not recorded                       | No image           | NOT RUN            |
+
+Store only safe, inspected UI images in an explicitly authorized public path. Logs are supplementary; they do not replace UI screenshots. A baseline from an earlier source commit must say so. Record exact code and evidence commits in the final PR; do not claim future commits were tested.
