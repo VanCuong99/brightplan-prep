@@ -10,3 +10,9 @@ coverage/
 !.env.example
 .DS_Store
 dist-web/
+dist-ios/
+dist-android/
+__pycache__/
+*.pyc
+
+native-test-results/

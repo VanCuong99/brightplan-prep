@@ -26,70 +26,77 @@ function DirectoryScreen() {
   return (
     <SafeAreaView style={s.screen}>
       <StatusBar barStyle="dark-content" />
-      <View style={s.container}>
-        <Text style={s.brand}>brightplan · practice</Text>
-        <Text style={s.eyebrow}>BUILD · EXPLAIN · VERIFY</Text>
-        <Text style={s.title} accessibilityRole="header">
-          People directory
-        </Text>
-        <Text style={s.subtitle}>Five fictional people. One shared model.</Text>
-        <Text style={s.label} nativeID="search-label">
-          Search by name
-        </Text>
-        <TextInput
-          accessibilityLabel="Search by name"
-          placeholder="Try Alex or Jamie…"
-          value={query}
-          onChangeText={setQuery}
-          style={s.input}
-          autoCapitalize="none"
-          autoCorrect={false}
-          returnKeyType="search"
-        />
-        <Pressable
-          accessibilityRole="button"
-          onPress={() => setQuery("")}
-          style={s.button}
-        >
-          <Text style={s.buttonText}>Clear search</Text>
-        </Pressable>
-        <Text accessibilityLiveRegion="polite" style={s.result}>
-          {visible.length} {visible.length === 1 ? "person" : "people"} found
-        </Text>
-        <FlatList
-          data={visible}
-          keyExtractor={(p) => p.id}
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={s.list}
-          renderItem={({ item }) => (
-            <View style={s.row}>
-              <View style={s.avatar}>
-                <Text style={s.initials}>
-                  {item.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </Text>
-              </View>
-              <View style={s.person}>
-                <Text style={s.name}>{item.name}</Text>
-                <Text style={s.role}>{item.role}</Text>
-              </View>
-            </View>
-          )}
-          ListEmptyComponent={
-            <View style={s.empty}>
-              <Text style={s.name}>No people found</Text>
-              <Text style={s.role}>
-                Try another name, or clear your search.
+      <FlatList
+        style={s.container}
+        data={visible}
+        keyExtractor={(p) => p.id}
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={s.content}
+        ListHeaderComponent={
+          <View>
+            <Text style={s.brand}>brightplan · practice</Text>
+            <Text style={s.eyebrow}>BUILD · EXPLAIN · VERIFY</Text>
+            <Text style={s.title} accessibilityRole="header">
+              People directory
+            </Text>
+            <Text style={s.subtitle}>
+              Five fictional people. One shared model.
+            </Text>
+            <Text style={s.label} nativeID="search-label">
+              Search by name
+            </Text>
+            <TextInput
+              accessibilityLabel="Search by name"
+              placeholder="Try Alex or Jamie…"
+              value={query}
+              onChangeText={setQuery}
+              style={s.input}
+              autoCapitalize="none"
+              autoCorrect={false}
+              returnKeyType="search"
+            />
+            <Pressable
+              accessibilityRole="button"
+              onPress={() => setQuery("")}
+              style={s.button}
+            >
+              <Text style={s.buttonText}>Clear search</Text>
+            </Pressable>
+            <Text accessibilityLiveRegion="polite" style={s.result}>
+              {visible.length} {visible.length === 1 ? "person" : "people"}{" "}
+              found
+            </Text>
+          </View>
+        }
+        ListFooterComponent={
+          <Text style={s.environment}>
+            Runtime: {Platform.OS} · Build: native-scroll-v1 · Width:{" "}
+            {Math.round(width)} · Local fixture
+          </Text>
+        }
+        renderItem={({ item }) => (
+          <View style={s.row}>
+            <View style={s.avatar}>
+              <Text style={s.initials}>
+                {item.name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
               </Text>
             </View>
-          }
-        />
-        <Text style={s.environment}>
-          Runtime: {Platform.OS} · Width: {Math.round(width)} · Local fixture
-        </Text>
-      </View>
+            <View style={s.person}>
+              <Text style={s.name}>{item.name}</Text>
+              <Text style={s.role}>{item.role}</Text>
+            </View>
+          </View>
+        )}
+        ListEmptyComponent={
+          <View style={s.empty}>
+            <Text style={s.name}>No people found</Text>
+            <Text style={s.role}>Try another name, or clear your search.</Text>
+          </View>
+        }
+      />
     </SafeAreaView>
   );
 }
@@ -97,7 +104,6 @@ const s = StyleSheet.create({
   screen: { flex: 1, backgroundColor: "#f5f7f4" },
   container: {
     flex: 1,
-    padding: 24,
     maxWidth: 700,
     width: "100%",
     alignSelf: "center",
@@ -135,7 +141,7 @@ const s = StyleSheet.create({
   },
   buttonText: { color: "white", fontWeight: "600" },
   result: { fontSize: 12, color: "#728372", marginVertical: 20 },
-  list: { paddingBottom: 24 },
+  content: { padding: 24, paddingBottom: 32 },
   row: {
     flexDirection: "row",
     alignItems: "center",

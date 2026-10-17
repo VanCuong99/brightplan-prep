@@ -15,11 +15,13 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "npm run prepare:e2e && playwright test",
-    "check": "npm run typecheck && npm test && npm run build",
+    "check": "npm run typecheck && npm test && npm run test:mobile && npm run build",
     "mobile:export": "npm exec -w @brightplan/mobile -- expo export --platform web --output-dir dist-web",
     "prepare:e2e": "npm run build-storybook -w @brightplan/desktop && npm run mobile:export",
     "format": "prettier --write apps shared e2e *.ts *.json",
-    "test:evidence": "npm run prepare:e2e && playwright test e2e/role-filter.spec.ts"
+    "test:evidence": "npm run prepare:e2e && playwright test e2e/role-filter.spec.ts",
+    "test:mobile": "npm run test -w @brightplan/mobile",
+    "test:android:native": "python3 e2e/android-native.py"
   },
   "devDependencies": {
     "typescript": "~5.9.3",
