@@ -1,0 +1,32 @@
+{
+  "before.png": {
+    "sha256": "1c9841b8cba14e149410d2f686edbed6c3d7fbc96f6f2f080b354338cefe0ac3",
+    "width": 1280,
+    "height": 1100,
+    "source_commit": "5048b94bc2569fe91baf098fc7960f111f389e4f"
+  },
+  "clear-preserves-role.png": {
+    "sha256": "3ee86c7e496a04791334f5266f6f1c810b56477a89fca76af9e5304f82269685",
+    "width": 1280,
+    "height": 1100,
+    "source_commit": "e7febc1f697124054b938fc24fec461989c4f136"
+  },
+  "matched.png": {
+    "sha256": "a92727adfc65ef4ac29c7b571a0f8859916406e668a078af8de0296d73111a46",
+    "width": 1280,
+    "height": 1100,
+    "source_commit": "e7febc1f697124054b938fc24fec461989c4f136"
+  },
+  "narrow.png": {
+    "sha256": "5f2aede6399b036e70b760d9d51a2d65a9155ec5ae5fff87a0f1990c5cecae08",
+    "width": 390,
+    "height": 844,
+    "source_commit": "e7febc1f697124054b938fc24fec461989c4f136"
+  },
+  "no-match.png": {
+    "sha256": "d15b4ee3113197f57586726aab76a704644726d769fbbd4953188c55ed32bbbe",
+    "width": 1280,
+    "height": 1100,
+    "source_commit": "e7febc1f697124054b938fc24fec461989c4f136"
+  }
+}

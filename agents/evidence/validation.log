@@ -1,0 +1,53 @@
+Source commit: 0f602d648bbe87f2953334e1152c72ac0fb01b9d
+Scope: unchanged demo code; workflow documents are uncommitted.
+
+$ npm run typecheck
+
+> brightplan-interview-lab@0.1.0 typecheck
+> tsc --noEmit -p tsconfig.json && npm run typecheck -w @brightplan/mobile
+
+
+> @brightplan/mobile@0.1.0 typecheck
+> tsc --noEmit
+
+
+Exit code: 0
+
+$ npm test
+
+> brightplan-interview-lab@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.12 <repo>
+
+
+ Test Files  3 passed (3)
+      Tests  6 passed (6)
+   Start at  16:36:27
+   Duration  5.05s (transform 967ms, setup 4.63s, import 1.29s, tests 1.94s, environment 4.21s)
+
+
+Exit code: 0
+
+$ npm run build
+
+> brightplan-interview-lab@0.1.0 build
+> npm run build -w @brightplan/desktop
+
+
+> @brightplan/desktop@0.1.0 build
+> vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 64 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.41 kB │ gzip:  0.28 kB
+dist/assets/index-O1fI4O3P.css    3.86 kB │ gzip:  1.44 kB
+dist/assets/index-rcF2Ec2I.js   227.71 kB │ gzip: 70.94 kB
+
+✓ built in 131ms
+
+Exit code: 0
