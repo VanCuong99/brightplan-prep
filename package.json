@@ -1,0 +1,45 @@
+{
+  "name": "brightplan-interview-lab",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "desktop": "npm run dev -w @brightplan/desktop --",
+    "mobile": "npm run start -w @brightplan/mobile",
+    "mobile:web": "npm run web -w @brightplan/mobile",
+    "storybook": "npm run storybook -w @brightplan/desktop",
+    "build": "npm run build -w @brightplan/desktop",
+    "typecheck": "tsc --noEmit -p tsconfig.json && npm run typecheck -w @brightplan/mobile",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "npm run prepare:e2e && playwright test",
+    "check": "npm run typecheck && npm test && npm run build",
+    "mobile:export": "npm exec -w @brightplan/mobile -- expo export --platform web --output-dir dist-web",
+    "prepare:e2e": "npm run build-storybook -w @brightplan/desktop && npm run mobile:export",
+    "format": "prettier --write apps shared e2e *.ts *.json"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.0",
+    "jsdom": "^27.0.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/jest-dom": "^6.9.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@playwright/test": "^1.56.0",
+    "@types/react": "~19.2.0",
+    "@types/react-dom": "~19.2.0",
+    "@types/node": "^22.0.0",
+    "prettier": "^3.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
+  }
+}

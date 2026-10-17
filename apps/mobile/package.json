@@ -1,0 +1,23 @@
+{
+  "name": "@brightplan/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start --localhost",
+    "web": "expo start --web --localhost",
+    "ios": "expo start --ios --localhost",
+    "android": "expo start --android --localhost",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "expo": "~55.0.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-native": "0.83.10",
+    "react-native-web": "^0.21.0",
+    "react-native-safe-area-context": "~5.6.2",
+    "@expo/metro-runtime": "~55.0.0"
+  },
+  "devDependencies": {}
+}

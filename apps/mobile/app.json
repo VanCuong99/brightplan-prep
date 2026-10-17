@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Brightplan Practice",
+    "slug": "brightplan-practice",
+    "version": "1.0.0",
+    "orientation": "default",
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
